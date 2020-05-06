@@ -3,12 +3,9 @@ import express from 'express'
 import path from 'path'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import sockjs from 'sockjs'
 
 import cookieParser from 'cookie-parser'
 import Html from '../client/html'
-
-let connections = []
 
 const port = process.env.PORT || 3000
 const server = express()
@@ -24,16 +21,6 @@ server.use(cookieParser())
 server.use('/api/', (req, res) => {
   res.status(404)
   res.end()
-})
-
-const echo = sockjs.createServer()
-echo.on('connection', (conn) => {
-  connections.push(conn)
-  conn.on('data', async () => {})
-
-  conn.on('close', () => {
-    connections = connections.filter((c) => c.readyState !== 3)
-  })
 })
 
 server.get('/', (req, res) => {
@@ -60,9 +47,6 @@ server.get('/*', (req, res) => {
   )
 })
 
-const app = server.listen(port)
+server.listen(port)
 
-echo.installHandlers(app, { prefix: '/ws' })
-
-// eslint-disable-next-line no-console
 console.log(`Serving at http://localhost:${port}`)
