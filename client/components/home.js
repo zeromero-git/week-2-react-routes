@@ -35,8 +35,8 @@ const Dashboard = () => {
 
 const Main = () => {
   return (
-    <div id="title">
-      Main
+    <div>
+      <div id="title">Main</div>
       <ul>
         <li>
           <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
@@ -52,8 +52,8 @@ const Main = () => {
 const Profile = () => {
   const { userId } = useParams()
   return (
-    <div id="title">
-      Profile
+    <div>
+      <div id="title">Profile</div>
       <ul>
         <li>
           <Link to="/dashboard">Go To Root</Link>
