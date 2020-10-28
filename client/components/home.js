@@ -22,29 +22,20 @@ const Home = () => {
 
 const Dashboard = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/dashboard/main">Go To Main</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
-      </li>
-    </ul>
+    <div id="title">
+      Dashboard
+      <Link to="/dashboard/main">Go To Main</Link>
+      <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
+    </div>
   )
 }
 
 const Main = () => {
   return (
-    <div>
-      <div id="title">Main</div>
-      <ul>
-        <li>
-          <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
-        </li>
-        <li>
-          <Link to="/dashboard">Go To Root</Link>
-        </li>
-      </ul>
+    <div id="title">
+      Main
+      <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
+      <Link to="/dashboard">Go To Root</Link>
     </div>
   )
 }
@@ -52,16 +43,12 @@ const Main = () => {
 const Profile = () => {
   const { userId } = useParams()
   return (
-    <ul>
-      <div id="title">Profile</div>
-      <li>
-        <Link to="/dashboard">Go To Root</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/main">Go To Main</Link>
-      </li>
+    <div id="title">
+      Profile
+      <Link to="/dashboard">Go To Root</Link>
+      <Link to="/dashboard/main">Go To Main</Link>
       <div id="username">{userId}</div>
-    </ul>
+    </div>
   )
 }
 
