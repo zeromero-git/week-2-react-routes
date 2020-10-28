@@ -52,18 +52,16 @@ const Main = () => {
 const Profile = () => {
   const { userId } = useParams()
   return (
-    <div>
+    <ul>
       <div id="title">Profile</div>
-      <ul>
-        <li>
-          <Link to="/dashboard">Go To Root</Link>
-        </li>
-        <li>
-          <Link to="/dashboard/main">Go To Main</Link>
-        </li>
-      </ul>
+      <li>
+        <Link to="/dashboard">Go To Root</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/main">Go To Main</Link>
+      </li>
       <div id="username">{userId}</div>
-    </div>
+    </ul>
   )
 }
 
