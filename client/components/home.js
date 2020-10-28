@@ -26,8 +26,8 @@ const Home = () => {
   const Profile = () => {
     const { userId } = useParams()
     return (
-      <div id="title">
-        Profile
+      <div>
+        <div id="title">Profile</div>
         <div id="username">{userId}</div>
         <Link to="/dashboard">Go To Root </Link>
         <Link to="/dashboard/main">Go To Main</Link>
@@ -40,8 +40,6 @@ const Home = () => {
       <div className="flex items-center justify-center h-screen">
         <div className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
           <div id="title">Dashboard</div>
-          <div id="title">Main</div>
-          <div id="title">Profile</div>
           <Switch>
             <Route exact path="/dashboard" component={() => <Dashboard />} />
             <Route exact path="/dashboard/main" component={() => <Main />} />
