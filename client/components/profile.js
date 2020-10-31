@@ -8,12 +8,10 @@ const Dummy = () => {
   return (
     <div>
       <Head title="Hello" />
-      <div id="title">
-        Profile
-        <div id="username">{userId}</div>
-        <Link to="/dashboard">Go To Root </Link>
-        <Link to="/dashboard/main">Go To Main</Link>
-      </div>
+      <div id="title">Profile</div>
+      <div id="username">{userId}</div>
+      <Link to="/dashboard">Go To Root </Link>
+      <Link to="/dashboard/main">Go To Main</Link>
     </div>
   )
 }
