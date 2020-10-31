@@ -1,36 +1,11 @@
 import React from 'react'
-import { Switch, Route, Link, useParams } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Header from './header'
+import Dashboard from './dashboard'
+import Main from './main'
+import Profile from './profile'
 
 const Home = () => {
-  const Dashboard = () => {
-    return (
-      <div id="title">
-        Dashboard
-        <Link to="/dashboard/main">Go To Main </Link>
-        <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
-      </div>
-    )
-  }
-
-  const Main = () => (
-    <div id="title">
-      Main
-      <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile </Link>
-      <Link to="/dashboard">Go To Root</Link>
-    </div>
-  )
-
-  const Profile = () => {
-    const { userId } = useParams()
-    return (
-      <div>
-        <div id="title">Profile</div>
-        <div id="username">{userId}</div>
-        <Link to="/dashboard">Go To Root </Link>
-        <Link to="/dashboard/main">Go To Main</Link>
-    </div>
-  )
   return (
     <div>
       <Header />
@@ -50,3 +25,30 @@ const Home = () => {
 Home.propTypes = {}
 
 export default React.memo(Home)
+
+// const { userId } = useParams()
+
+// const Dashboard = () => (
+//   <div id="title">
+//     Dashboard
+//     <Link to="/dashboard/main">Go To Main </Link>
+//     <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile</Link>
+//   </div>
+// )
+
+// const Main = () => (
+//   <div id="title">
+//     Main
+//     <Link to="/dashboard/profile/3b21ca93-2f6b-45ee-92c6-0872fdaf45a7">Go To Profile </Link>
+//     <Link to="/dashboard">Go To Root</Link>
+//   </div>
+// )
+
+// const Profile = () => (
+//   <div id="title">
+//     Profile
+//     <div id="username">{userId}</div>
+//     <Link to="/dashboard">Go To Root </Link>
+//     <Link to="/dashboard/main">Go To Main</Link>
+//   </div>
+// )
